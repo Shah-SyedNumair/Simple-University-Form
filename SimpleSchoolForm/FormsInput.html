@@ -1,0 +1,140 @@
+<!-- adapted from original work of Prof. M Brown and Amir Chinaei.
+EECS1012 - York University (CC)  FormsInput.html  for lab 2 23w -->
+
+<!doctype html>
+<html lang="en">
+<head>
+
+<!-- adapted from original work of Prof. M Brown and Amir Chinaei.
+EECS1012 - York University (CC)  FormsInput.html  for lab 2 23w -->
+
+<!doctype html>
+<html lang="en">
+<head>
+<title> F23 Form Example </title>
+<meta charset="utf-8">
+  <!-- <link href=" " rel="stylesheet">  -->  
+<!-- <script src=""></script> -->
+<link rel = "stylesheet" href = "FormsInput.css" type = "text/css">
+<script type = "text/javascript" src = "form.js"></script>
+
+ 
+</head>
+
+<body>
+
+<div class="ig" style="text-align: center;"><img id="im" src="images/logo/york.png" width="354" height="142" border="0" alt=""> </div>  <!-- add york logo -->
+
+<form  action="https://www.eecs.yorku.ca/course_archive/2023-24/F/4413B/welcome_get.php" method="get" >
+
+
+<div class="box" id="box">
+  <!-- First Name input -->
+  <h2> LAS Student Information </h2>
+  <p> <span class="fieldName">First Name*: </span>
+    <!-- complete the textbox for first name. Make sure it has class "input", and 'name' attribute is "firstName". 
+	  class is used by css, name attribute is used by the server code -->
+	<input type= "text" id = "fname" name="firstName"></input>
+  
+ </p>
+    <!-- Last Name input --> 
+  <p> <span class="fieldName"> Last Name*: </span>
+   <!-- add a textbox for last name. Make sure its class is "input", and 'name' attribute is "lastName"  -->
+   <input type=  "text" id = "lname" name="lastName"></input>
+  </p>  
+
+
+  <p> <span class="fieldName"> Password*: </span>
+    <!-- add a textbox for password. Make sure its class is "input", and 'name' attribute is "password"  --> 
+	<input type = "password" id="pass" name="password"></input>
+  </p>
+
+  <!-- email input -->
+  <p> <span class="fieldName"> Email*: </span>
+  <!-- add a textbox for email. Make sure its class is "input", and 'name' attribute is "email"  -->
+  <input type = "email" id = "emil" name="email"></input>
+  </p>
+  
+  <hr>
+ 
+  <p> <span class="fieldName"> Program: </span>
+  <select name="program" onchange="otherInput()">   
+    <!-- complete the dropdown list as shown in pdf.   make value same as the section text. E.g., value="EECS" for EECS
+	 The 'value' attribute is needed by the server.search w3schools for details.
+      Make EECS is the default selected one -->
+     <option value = "CHEM">CHEM</option>
+     <option value = "CIVIL">CIVIL</option>
+     <option value = "EECS" selected>EECS</option>
+     <option value = "ECON">ECON</option>
+     <option value = "HIST">HIST</option>
+     <option value = "MATH">MATH</option>
+     <option value = "OTHER" >OTHER</option>
+  </select>
+  
+   <!-- add a textbox for other program. Make sure its id is "input", and 'name' attribute is "other"  -->
+  <input type = "text" id = "other" name = "other"></input>
+  </p>
+
+   <p> <span class="fieldName"> Year: </span>
+   <!-- complete the radio button.  Make sure 'name' attribute is "year" for all the redio button.  Make value 1,2,3,4. The 'value' attribute is needed by the server. search w3schools for details.
+    Make first year as default checked one -->
+
+    <input type = "radio" id = "1" name = "year" value = "1" checked>
+    <label for = "1">1</label>
+    <input type = "radio" id = "2" name = "year" value = "2">
+    <label for = "2">2</label>
+    <input type = "radio" id = "3" name = "year" value = "3">
+    <label for = "3">3</label>
+    <input type = "radio" id = "4" name = "year" value = "4">
+    <label for = "4">4</label>
+  </p>  
+
+  
+  <p> <span class="fieldName"> Hobbies: </span>
+   <input type="checkbox" name="hobby[]" value="Reading"/> Reading 
+   <!-- complete the checbox.  Make sure name attribute is "hobby[]" for all the boxes. make value same as text. E.g., value="Reading" for Reading. 'value' attribute is needed by the server.  search w3schools for details.
+    Make 'Thinking' as default selected one -->
+
+    <input type="checkbox" name="hobby[]" value="Chatting"/> Chatting
+    <input type="checkbox" name="hobby[]" value="Jogging"/> Jogging
+    <input type="checkbox" name="hobby[]" value="Thinking"/> Thinking
+    <input type="checkbox" name="hobby[]" value="Painting"/> Painting
+  </p>
+
+  <hr>
+  <p>
+    <span class="fieldName"> Comment: </span>
+    <textarea name="comment" rows="2" cols="40">Enter your comment here ....
+    </textarea>
+  </p>
+
+   <hr>
+   <p> <span class="fieldName"> Enter course code to search: </span>  
+   <!-- add a textbox for course code. Make sure its class is "input", and 'name' attribute is "course"  -->  
+   <input type="text" id = "course" name = "course"></input>
+   </p>
+  
+
+  <hr>
+    <div class="buttons"> <!-- style="text-align:center;">  -->  
+
+	<!-- added two buttons, one for clearing data, one for submitting the form. Button text should be 'Clear' and 'Submit' respectively> -->
+  <!-- hint: <input> with type 'reset' and 'submit' can create reset and submit buttons respectively. search w3schools for details. -->
+      <input type = "submit" id="sub" value = "Submit" onclick="validate(event)"> 
+      <input type = "reset" id = "res" value = "Clear">
+ 
+   </div> 
+
+ </div>
+</form>
+
+ <div class="buttons"> 
+
+  <!-- add two buttons for change logo and change background color -->
+  <button id = "logo" onclick="changeLogo()">Toggle logo</button>
+  <button id = "color" onclick="changeBackground()">Change background</button>
+ </div>
+
+
+</body>
+</html>
